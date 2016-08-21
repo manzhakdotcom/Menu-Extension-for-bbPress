@@ -9,7 +9,7 @@ Author: sergey-manzhak
 Author URI: http://www.manzhak.com/
 */
 
-define( 'BBP_M_EXT_VERSION', '1.0.0' );
+define( 'BBP_M_EXT_VERSION', '1.0.1' );
 define('BBP_M_EXT_BASENAME', plugin_basename( __FILE__ ));
 define('BBP_M_EXT_PATH', plugin_dir_path( __FILE__ ));
 
