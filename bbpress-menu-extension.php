@@ -3,19 +3,46 @@
 Plugin Name: bbPress Menu Extension
 Plugin URI: http://www.manzhak.com/bbpress-menu-extension
 Description: You can now add bbPress links in your WP menus.
-Version: 1.0.0
+Version: 1.0.1
 Text Domain: bbpress-menu-extension
-Author: Manzhak
+Author: sergey-manzhak
 Author URI: http://www.manzhak.com/
 */
 
-define( 'BBP_M_EXT_VERSION', '1.0.0' );
-
-include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-
+define( 'BBP_M_EXT_VERSION', '1.0.1' );
+define('BBP_M_EXT_BASENAME', plugin_basename( __FILE__ ));
 define('BBP_M_EXT_PATH', plugin_dir_path( __FILE__ ));
 
-if ( is_plugin_active( 'bbpress/bbpress.php' ) ) {
+
+/**
+ * @return boolean True if bbPress is active, otherwise false
+ */
+function bbp_m_ext_meets_requirements() {
+
+	return class_exists( 'BBP_Component' ) ? true : false;
+
+} /*bbp_m_ext_meets_requirements()*/
+
+function bbp_m_ext_maybe_disable_plugin () {
+
+	// Generate our error message
+	$output = '<div id="message" class="error">';
+	$output .= '<p>';
+	$output .= sprintf( __( 'The %1$sbbPress Menu Extension is inactive.%2$s The %3$sbbPress%4$s plugin must be active for the bbPress Menu Extension to work. Please activate bbPress on the %5$splugin page%6$s once it is installed.', 'bbpress-menu-extension' ), '<strong>', '</strong>', '<a href="http://wordpress.org/extend/plugins/bbPress/" target="_blank">', '</a>', '<a href="' . esc_url( admin_url( 'plugins.php' ) ) . '">', '</a>' );
+	$output .= '</p>';
+	$output .= '</div>';
+	echo $output;
+
+	// Deactivate our plugin
+	deactivate_plugins( BBP_M_EXT_BASENAME );
+
+}/*bbp_m_ext_maybe_disable_plugin()*/
+
+
+if ( bbp_m_ext_meets_requirements() ) {
+
+	// Load translations
+	load_plugin_textdomain( 'bbpress-menu-extension', false, dirname( BBP_M_EXT_BASENAME ) . '/languages' );
 
 	add_action( 'plugins_loaded', create_function( '', '
 			$filename  = "include/";
@@ -26,14 +53,5 @@ if ( is_plugin_active( 'bbpress/bbpress.php' ) ) {
 	);
 	
 } else {
-	add_action('admin_notices', 'bbp_m_ext_plugin_admin_notices');
-}
-
-function bbp_m_ext_plugin_admin_notices() {
-
-	   $msg = sprintf( __( 'Please install or activate : %s.', $_SERVER['SERVER_NAME'] ), '<a href=https://wordpress.org/plugins/bbpress style="color: #ffffff;text-decoration:none;font-style: italic;" target="_blank"/><strong>bbPress - forum by WordPress Team</strong></a>' );
-	   
-	   echo '<div id="message" class="error" style="background-color: #DD3D36;"><p style="font-size: 16px;color: #ffffff">' . $msg . '</p></div>';   
-	   
-	   deactivate_plugins('bbpress-menu-extension/bbpress-menu-extension.php');
+	add_action('admin_notices', 'bbp_m_ext_maybe_disable_plugin');
 }
