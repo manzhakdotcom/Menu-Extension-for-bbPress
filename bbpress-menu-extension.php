@@ -3,7 +3,7 @@
 Plugin Name: bbPress Menu Extension
 Plugin URI: http://www.manzhak.com/bbpress-menu-extension
 Description: You can now add bbPress links in your WP menus.
-Version: 0.0.1
+Version: 0.0.2
 Text Domain: bbpress-menu-extension
 Author: Sergius Manzhak
 Author URI: http://www.manzhak.com/
@@ -12,7 +12,7 @@ Text Domain: bbpress-menu-extension
 Domain Path: /languages/
 */
 
-define( 'BBP_M_EXT_VERSION', '0.0.1' );
+define( 'BBP_M_EXT_VERSION', '0.0.2' );
 
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
