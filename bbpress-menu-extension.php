@@ -3,13 +3,16 @@
 Plugin Name: bbPress Menu Extension
 Plugin URI: http://www.manzhak.com/bbpress-menu-extension
 Description: You can now add bbPress links in your WP menus.
-Version: 1.0.0
+Version: 0.0.1
 Text Domain: bbpress-menu-extension
-Author: Manzhak
+Author: Sergius Manzhak
 Author URI: http://www.manzhak.com/
+
+Text Domain: bbpress-menu-extension
+Domain Path: /languages/
 */
 
-define( 'BBP_M_EXT_VERSION', '1.0.0' );
+define( 'BBP_M_EXT_VERSION', '0.0.1' );
 
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
@@ -31,7 +34,7 @@ if ( is_plugin_active( 'bbpress/bbpress.php' ) ) {
 
 function bbp_m_ext_plugin_admin_notices() {
 
-	   $msg = sprintf( __( 'Please install or activate : %s.', $_SERVER['SERVER_NAME'] ), '<a href=https://wordpress.org/plugins/bbpress style="color: #ffffff;text-decoration:none;font-style: italic;" target="_blank"/><strong>bbPress - forum by WordPress Team</strong></a>' );
+	   $msg = sprintf( __( 'Please install or activate : %s.', 'bbpress-menu-extension' ), '<a href=https://wordpress.org/plugins/bbpress style="color: #ffffff;text-decoration:none;font-style: italic;" target="_blank"/><strong>bbPress - forum by WordPress Team</strong></a>' );
 	   
 	   echo '<div id="message" class="error" style="background-color: #DD3D36;"><p style="font-size: 16px;color: #ffffff">' . $msg . '</p></div>';   
 	   
