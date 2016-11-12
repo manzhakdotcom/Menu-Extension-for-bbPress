@@ -3,27 +3,51 @@
 Plugin Name: bbPress Menu Extension
 Plugin URI: http://www.manzhak.com/bbpress-menu-extension
 Description: You can now add bbPress links in your WP menus.
-Version: 1.0.1
+Version: 0.0.4
 Text Domain: bbpress-menu-extension
-Author: sergey-manzhak
+Author: Sergius Manzhak
 Author URI: http://www.manzhak.com/
+
+Text Domain: bbpress-menu-extension
+Domain Path: /languages/
 */
 
-define( 'BBP_M_EXT_VERSION', '1.0.1' );
-define('BBP_M_EXT_BASENAME', plugin_basename( __FILE__ ));
-define('BBP_M_EXT_PATH', plugin_dir_path( __FILE__ ));
+define( 'BBP_M_EXT_VERSION', '0.0.3' );
+define( 'BBP_M_EXT_BASENAME', plugin_basename( __FILE__ ) );
+define( 'BBP_M_EXT_PATH', plugin_dir_path( __FILE__ ) );
+define( 'BBP_M_EXT_INC', BBP_M_EXT_PATH . 'include/' );
 
 
-/**
- * @return boolean True if bbPress is active, otherwise false
- */
-function bbp_m_ext_meets_requirements() {
+function bbp_m_ext_is_request($type) {
+	switch ( $type ) {
+		case 'admin' :
+			return is_admin();
+		case 'frontend' :
+			return ( ! is_admin() || defined( 'DOING_AJAX' ) ) && ! defined( 'DOING_CRON' );
+	}
+}
 
-	return class_exists( 'BBP_Component' ) ? true : false;
 
-} /*bbp_m_ext_meets_requirements()*/
+function bbp_m_ext_start() {
 
-function bbp_m_ext_maybe_disable_plugin () {
+	if ( bbp_m_ext_is_request( 'admin' ) ) {
+		include_once( BBP_M_EXT_INC . 'admin.php' );
+	}
+	if ( bbp_m_ext_is_request( 'frontend' ) ) {
+		include_once( BBP_M_EXT_INC . 'frontend.php' );
+	}
+
+}
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+if ( is_plugin_active( 'bbpress/bbpress.php' ) ) {
+
+	add_action( 'plugins_loaded', 'bbp_m_ext_start' );
+	
+} else {
+	add_action('admin_notices', 'bbp_m_ext_plugin_admin_notices');
+}
+
+function bbp_m_ext_plugin_admin_notices() {
 
 	// Generate our error message
 	$output = '<div id="message" class="error">';
@@ -31,27 +55,7 @@ function bbp_m_ext_maybe_disable_plugin () {
 	$output .= sprintf( __( 'The %1$sbbPress Menu Extension is inactive.%2$s The %3$sbbPress%4$s plugin must be active for the bbPress Menu Extension to work. Please activate bbPress on the %5$splugin page%6$s once it is installed.', 'bbpress-menu-extension' ), '<strong>', '</strong>', '<a href="http://wordpress.org/extend/plugins/bbPress/" target="_blank">', '</a>', '<a href="' . esc_url( admin_url( 'plugins.php' ) ) . '">', '</a>' );
 	$output .= '</p>';
 	$output .= '</div>';
-	echo $output;
-
-	// Deactivate our plugin
-	deactivate_plugins( BBP_M_EXT_BASENAME );
-
-}/*bbp_m_ext_maybe_disable_plugin()*/
-
-
-if ( bbp_m_ext_meets_requirements() ) {
-
-	// Load translations
-	load_plugin_textdomain( 'bbpress-menu-extension', false, dirname( BBP_M_EXT_BASENAME ) . '/languages' );
-
-	add_action( 'plugins_loaded', create_function( '', '
-			$filename  = "include/";
-			$filename .= is_admin() ? "backend.inc.php" : "frontend.inc.php";
-			if( file_exists( plugin_dir_path( __FILE__ ) . $filename ) )
-				include( plugin_dir_path( __FILE__ ) . $filename );
-	' 	)
-	);
-	
-} else {
-	add_action('admin_notices', 'bbp_m_ext_maybe_disable_plugin');
+	echo $output; 
+	   
+	deactivate_plugins('bbpress-menu-extension/bbpress-menu-extension.php');
 }
