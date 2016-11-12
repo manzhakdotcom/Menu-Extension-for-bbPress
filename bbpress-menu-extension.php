@@ -12,7 +12,7 @@ Text Domain: bbpress-menu-extension
 Domain Path: /languages/
 */
 
-define( 'BBP_M_EXT_VERSION', '0.0.3' );
+define( 'BBP_M_EXT_VERSION', '0.0.4' );
 define( 'BBP_M_EXT_BASENAME', plugin_basename( __FILE__ ) );
 define( 'BBP_M_EXT_PATH', plugin_dir_path( __FILE__ ) );
 define( 'BBP_M_EXT_INC', BBP_M_EXT_PATH . 'include/' );
