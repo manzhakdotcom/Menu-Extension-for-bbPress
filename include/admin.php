@@ -9,7 +9,7 @@ function bbp_m_ext_add_nav_menu_metabox() {
 }
 
 /* The metabox code */
-function bbp_m_ext_nav_menu_metabox( $object )
+function bbp_m_ext_nav_menu_metabox()
 {
 	global $nav_menu_selected_id;
 
