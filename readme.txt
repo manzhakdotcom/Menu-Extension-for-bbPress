@@ -36,7 +36,7 @@ Plugin Developed by Manzhak [Visit website](http://www.manzhak.com)
 
 = How does this works? =
 
-Visit your navigation admin menu page, you got a new box including 10 links, *"Topics"*, *"My Profile"*.
+Visit your navigation admin menu page, you got a new box including 2 links - *"Topics"*, *"My Profile"*.
 
 == Screenshots ==
 
@@ -44,9 +44,9 @@ Visit your navigation admin menu page, you got a new box including 10 links, *"T
 
 == Changelog ==
 
-= 1.0.0 =
+= 0.0.4 =
+* Upgrade Version
+
+= 0.0.1 =
 * First Version
 
-== Upgrade Notice ==
-
-None
