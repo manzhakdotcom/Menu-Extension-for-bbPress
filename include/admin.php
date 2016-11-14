@@ -1,6 +1,6 @@
 <?php
-if( !defined( 'ABSPATH' ) )
-	die( 'Error' );
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 /* Add a metabox in admin menu page */
 add_action('admin_head-nav-menus.php', 'bbp_m_ext_add_nav_menu_metabox');

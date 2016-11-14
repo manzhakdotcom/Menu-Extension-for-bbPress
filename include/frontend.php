@@ -1,6 +1,6 @@
 <?php
-if( !defined( 'ABSPATH' ) )
-	die( 'Error' );
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 /* The main code, this replace the #keyword# by the correct links with nonce ect */
 add_filter( 'wp_setup_nav_menu_item', 'bbp_m_ext_setup_nav_menu_item' );

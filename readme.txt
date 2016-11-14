@@ -2,8 +2,8 @@
 Contributors: sergey-manzhak
 Tags: bbpress, menu, forum, menu, topics, profile, logout, login, account, link, community, item.
 Requires at least: 3.0
-Tested up to: 4.6
-Stable tag: 0.0.4
+Tested up to: 4.6.1
+Stable tag: 0.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -43,6 +43,9 @@ Visit your navigation admin menu page, you got a new box including 2 links - *"T
 1. The bbPress menu in nav menu admin page.
 
 == Changelog ==
+
+= 0.0.5 =
+* Add language
 
 = 0.0.4 =
 * Upgrade Version
