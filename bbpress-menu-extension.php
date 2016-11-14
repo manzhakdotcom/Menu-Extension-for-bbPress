@@ -3,7 +3,7 @@
 Plugin Name: bbPress Menu Extension
 Plugin URI: http://www.manzhak.com/bbpress-menu-extension
 Description: You can now add bbPress links in your WP menus.
-Version: 0.0.4
+Version: 0.0.5
 Text Domain: bbpress-menu-extension
 Author: Sergius Manzhak
 Author URI: http://www.manzhak.com/
@@ -12,11 +12,14 @@ Text Domain: bbpress-menu-extension
 Domain Path: /languages/
 */
 
-define( 'BBP_M_EXT_VERSION', '0.0.4' );
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) exit;
+
+
 define( 'BBP_M_EXT_BASENAME', plugin_basename( __FILE__ ) );
 define( 'BBP_M_EXT_PATH', plugin_dir_path( __FILE__ ) );
 define( 'BBP_M_EXT_INC', BBP_M_EXT_PATH . 'include/' );
-
+define( 'BBP_M_EXT_VERSION', '0.0.5' );
 
 function bbp_m_ext_is_request($type) {
 	switch ( $type ) {
@@ -27,9 +30,13 @@ function bbp_m_ext_is_request($type) {
 	}
 }
 
+function bbp_m_ext_textdomain() {
+    load_plugin_textdomain( 'bbpress-menu-extension', false, dirname( BBP_M_EXT_BASENAME ) . '/languages' );
+}
+
 
 function bbp_m_ext_start() {
-
+    add_action( 'init', 'bbp_m_ext_textdomain' );
 	if ( bbp_m_ext_is_request( 'admin' ) ) {
 		include_once( BBP_M_EXT_INC . 'admin.php' );
 	}
@@ -38,6 +45,7 @@ function bbp_m_ext_start() {
 	}
 
 }
+
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 if ( is_plugin_active( 'bbpress/bbpress.php' ) ) {
 
