@@ -50,3 +50,7 @@ Visit your navigation admin menu page, you got a new box including 2 links - *"T
 = 0.0.1 =
 * First Version
 
+== Upgrade Notice ==
+
+None
+
