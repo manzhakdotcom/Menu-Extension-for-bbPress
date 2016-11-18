@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 /* Add a metabox in admin menu page */
 add_action('admin_head-nav-menus.php', 'bbp_m_ext_add_nav_menu_metabox');
 function bbp_m_ext_add_nav_menu_metabox() {
-	add_meta_box( 'bbp_m_ext', __( 'bbPress Links', 'bbpress-menu-extension' ), 'bbp_m_ext_nav_menu_metabox', 'nav-menus', 'side', 'default' );
+	add_meta_box( 'bbp_m_ext', __( 'bbPress Links', 'menu-extension-for-bbpress' ), 'bbp_m_ext_nav_menu_metabox', 'nav-menus', 'side', 'default' );
 }
 
 /* The metabox code */
@@ -13,7 +13,7 @@ function bbp_m_ext_nav_menu_metabox()
 {
 	global $nav_menu_selected_id;
 
-	$elems = array( '#bbp_m_ext_topics#' => __( 'My Topics', 'bbpress-menu-extension' ), '#bbp_m_ext_profile#' => __( 'My Profile', 'bbpress-menu-extension' )  );
+	$elems = array( '#bbp_m_ext_topics#' => __( 'My Topics', 'menu-extension-for-bbpress' ), '#bbp_m_ext_profile#' => __( 'My Profile', 'menu-extension-for-bbpress' )  );
 	class bbp_m_ext_logItems {
 		public $db_id = 0;
 		public $object = 'bbp_m_ext_log';
@@ -48,7 +48,7 @@ function bbp_m_ext_nav_menu_metabox()
 
 		<p class="button-controls wp-clearfix">
 			<span class="add-to-menu">
-				<input type="submit"<?php disabled( $nav_menu_selected_id, 0 ); ?> class="button-secondary submit-add-to-menu right" value="<?php esc_attr_e('Add to Menu', 'bbpress-menu-extension' ); ?>" name="add-bbpress-links-menu-item" id="submit-bbpress-links" />
+				<input type="submit"<?php disabled( $nav_menu_selected_id, 0 ); ?> class="button-secondary submit-add-to-menu right" value="<?php esc_attr_e('Add to Menu', 'menu-extension-for-bbpress' ); ?>" name="add-bbpress-links-menu-item" id="submit-bbpress-links" />
 				<span class="spinner"></span>
 			</span>
 		</p>
