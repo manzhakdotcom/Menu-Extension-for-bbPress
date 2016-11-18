@@ -1,4 +1,4 @@
-# bbPress Menu Extension
+# Menu Extension for bbPress
 A simple bbPress extension for allowing users to add bbPress links in your WordPress menus
 
 ####Key Features
