@@ -1,0 +1,104 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: bbPress Menu Extension\n"
+"POT-Creation-Date: 2016-11-18 11:50+0300\n"
+"PO-Revision-Date: 2016-11-18 11:53+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.8.9\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: bbpress-menu-extension.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: bbpress-menu-extension.php:63
+#, php-format
+msgid ""
+"The \"Menu Extension for bbPress\" %1$sis inactive.%2$s The %3$sbbPress%4$s "
+"plugin must be active for the \"Menu Extension for bbPress\" to work. Please "
+"activate bbPress on the %5$splugin page%6$s once it is installed."
+msgstr ""
+"Плагин \"Меню расширение для  bbPress\" %1$sбыл деактивирован.%2$s Плагин "
+"%3$sbbPress%4$s должен быть установлен и активирован, чтобы плагин \"Меню "
+"расширение для  bbPress\" работал. Пожалуйста, установите и активируйте "
+"bbPress на %5$sстранице плагинов%6$s."
+
+#: include/admin.php:8
+msgid "bbPress Links"
+msgstr "Ссылки bbPress"
+
+#: include/admin.php:16
+msgid "My Topics"
+msgstr "Мои темы"
+
+#: include/admin.php:16
+msgid "My Profile"
+msgstr "Мой профиль"
+
+#: include/admin.php:51
+msgid "Add to Menu"
+msgstr "Добавить в меню"
+
+#. Plugin Name of the plugin/theme
+msgid "The Menu Extension for bbPress"
+msgstr "Меню расширение для bbPress"
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.manzhak.com/menu-extension-for-bbpress"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "You can now add bbPress links in your WP menus."
+msgstr "Вы сможете добавить bbPress ссылки в Ваше меню."
+
+#. Author of the plugin/theme
+msgid "Sergius Manzhak"
+msgstr "Сергий Манжак"
+
+#. Author URI of the plugin/theme
+msgid "http://www.manzhak.com/"
+msgstr ""
+
+#~ msgid ""
+#~ "The Menu Extension for bbPress %1$sis inactive.%2$s The %3$sbbPress%4$s "
+#~ "plugin must be active for the Menu Extension for bbPress to work. Please "
+#~ "activate bbPress on the %5$splugin page%6$s once it is installed."
+#~ msgstr ""
+#~ "Меню расширение для  bbPress %1$sне активно.%2$s Плагин %3$sbbPress%4$s "
+#~ "должен быть активен, чтобы плагин Меню расширение для  bbPress работал. "
+#~ "Пожалуйста, установите и активируйте bbPress на %5$sстранице плагинов%6$s."
+
+#~ msgid "Menu Extension for bbPress"
+#~ msgstr "Меню расширение для  bbPress"
+
+#~ msgid ""
+#~ "The %1$sMenu Extension for bbPress is inactive.%2$s The %3$sbbPress%4$s "
+#~ "plugin must be active for the Menu Extension for bbPress to work. Please "
+#~ "activate bbPress on the %5$splugin page%6$s once it is installed."
+#~ msgstr ""
+#~ "%1$sМеню расширение для  bbPress не активно.%2$s Плагин %3$sbbPress%4$s "
+#~ "должен быть активен, чтобы плагин Меню расширение для  bbPress работал. "
+#~ "Пожалуйста, установите и активируйте bbPress на %5$sстранице плагинов%6$s."
+
+#~ msgid ""
+#~ "The %1$sbbPress Menu Extension is inactive.%2$s The %3$sbbPress%4$s "
+#~ "plugin must be active for the bbPress Menu Extension to work. Please "
+#~ "activate bbPress on the %5$splugin page%6$s once it is installed."
+#~ msgstr ""
+#~ "%1$sbbPress Menu Extension деактивирован.%2$s Плагин %3$sbbPress%4$s "
+#~ "должен быть активирован, чтобы работал плагин bbPress Menu Extension. "
+#~ "Пожалуйста, активируйте bbPress на %5$sстранице плагина%6$s после его "
+#~ "установки."
+
+#~ msgid "bbPress Menu Extension"
+#~ msgstr "bbPress Меню Расширение"
