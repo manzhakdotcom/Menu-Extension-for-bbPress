@@ -1,14 +1,14 @@
 <?php
 /*
-Plugin Name: bbPress Menu Extension
-Plugin URI: http://www.manzhak.com/bbpress-menu-extension
+Plugin Name: The Menu Extension for bbPress
+Plugin URI: http://www.manzhak.com/menu-extension-for-bbpress
 Description: You can now add bbPress links in your WP menus.
 Version: 0.0.5
-Text Domain: bbpress-menu-extension
+Text Domain: menu-extension-for-bbpress
 Author: Sergius Manzhak
 Author URI: http://www.manzhak.com/
 
-Text Domain: bbpress-menu-extension
+Text Domain: menu-extension-for-bbpress
 Domain Path: /languages/
 */
 
@@ -31,7 +31,7 @@ function bbp_m_ext_is_request($type) {
 }
 
 function bbp_m_ext_textdomain() {
-    load_plugin_textdomain( 'bbpress-menu-extension', false, dirname( BBP_M_EXT_BASENAME ) . '/languages' );
+    load_plugin_textdomain( 'menu-extension-for-bbpress', false, dirname( BBP_M_EXT_BASENAME ) . '/languages' );
 }
 
 
@@ -60,10 +60,10 @@ function bbp_m_ext_plugin_admin_notices() {
 	// Generate our error message
 	$output = '<div id="message" class="error">';
 	$output .= '<p>';
-	$output .= sprintf( __( 'The %1$sbbPress Menu Extension is inactive.%2$s The %3$sbbPress%4$s plugin must be active for the bbPress Menu Extension to work. Please activate bbPress on the %5$splugin page%6$s once it is installed.', 'bbpress-menu-extension' ), '<strong>', '</strong>', '<a href="http://wordpress.org/extend/plugins/bbPress/" target="_blank">', '</a>', '<a href="' . esc_url( admin_url( 'plugins.php' ) ) . '">', '</a>' );
+	$output .= sprintf( __( 'The "Menu Extension for bbPress" %1$sis inactive.%2$s The %3$sbbPress%4$s plugin must be active for the "Menu Extension for bbPress" to work. Please activate bbPress on the %5$splugin page%6$s once it is installed.', 'menu-extension-for-bbpress' ), '<strong>', '</strong>', '<a href="http://wordpress.org/extend/plugins/bbPress/" target="_blank">', '</a>', '<a href="' . esc_url( admin_url( 'plugins.php' ) ) . '">', '</a>' );
 	$output .= '</p>';
 	$output .= '</div>';
 	echo $output; 
 	   
-	deactivate_plugins('bbpress-menu-extension/bbpress-menu-extension.php');
+	deactivate_plugins( BBP_M_EXT_BASENAME );
 }
