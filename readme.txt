@@ -20,7 +20,7 @@ Features :
 
 * With this plugin you can now add a bbPress links to existing WordPress menu.
 
-If you have suggestions or bugfixes for the plugin, please report them on [Github](https://github.com/manzhakdotcom/bbPress-Menu-Extension).
+If you have suggestions or bugfixes for the plugin, please report them on [Github](https://github.com/manzhakdotcom/Menu-Extension-for-bbPress).
 
 **Languages**
 
