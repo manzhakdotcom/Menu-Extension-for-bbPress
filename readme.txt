@@ -53,6 +53,9 @@ Visit your navigation admin menu page, you got a new box including 2 links - *"T
 
 == Changelog ==
 
+= 0.0.6 =
+* change text domain
+
 = 0.0.5 =
 * Add language
 
