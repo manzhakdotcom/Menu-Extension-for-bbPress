@@ -3,7 +3,7 @@ Contributors: sergey-manzhak
 Tags: bbpress, menu, forum, menu, topics, profile, logout, login, account, link, community, item.
 Requires at least: 3.0
 Tested up to: 4.6.1
-Stable tag: 0.0.8
+Stable tag: 0.0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,14 +53,17 @@ Visit your navigation admin menu page, you got a new box including 2 links - *"T
 
 == Changelog ==
 
+= 0.0.9 =
+* Add new redirect page if user logout
+
 = 0.0.8 =
-* improve load file
+* Improve load file
 
 = 0.0.7 =
-* fixed some bugs
+* Fixed some bugs
 
 = 0.0.6 =
-* change text domain
+* Change text domain
 
 = 0.0.5 =
 * Add language
