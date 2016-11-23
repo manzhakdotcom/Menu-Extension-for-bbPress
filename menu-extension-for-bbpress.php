@@ -3,7 +3,7 @@
 Plugin Name: Menu Extension for bbPress
 Plugin URI: http://www.manzhak.com/menu-extension-for-bbpress
 Description: You can now add bbPress links in your WP menus.
-Version: 0.0.5
+Version: 0.0.6
 Text Domain: menu-extension-for-bbpress
 Author: Sergius Manzhak
 Author URI: http://www.manzhak.com/
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 define( 'BBP_M_EXT_BASENAME', plugin_basename( __FILE__ ) );
 define( 'BBP_M_EXT_PATH', plugin_dir_path( __FILE__ ) );
 define( 'BBP_M_EXT_INC', BBP_M_EXT_PATH . 'include/' );
-define( 'BBP_M_EXT_VERSION', '0.0.5' );
+define( 'BBP_M_EXT_VERSION', '0.0.6' );
 
 function bbp_m_ext_is_request($type) {
 	switch ( $type ) {
@@ -31,7 +31,29 @@ function bbp_m_ext_is_request($type) {
 }
 
 function bbp_m_ext_textdomain() {
-    load_plugin_textdomain( 'menu-extension-for-bbpress', false, dirname( BBP_M_EXT_BASENAME ) . '/languages' );
+
+    // Set filter for plugin's languages directory
+    $lang_dir = dirname( BBP_M_EXT_BASENAME ) . '/languages/';
+    $lang_dir = apply_filters( 'bbp_notices_languages', $lang_dir );
+
+    // Traditional WordPress plugin locale filter
+    $locale        = apply_filters( 'plugin_locale',  get_locale(), 'menu-extension-for-bbpress' );
+    $mofile        = sprintf( '%1$s-%2$s.mo', 'menu-extension-for-bbpress', $locale );
+
+    // Setup paths to current locale file
+    $mofile_local  = $lang_dir . $mofile;
+    $mofile_global = WP_LANG_DIR . '/menu-extension-for-bbpress/' . $mofile;
+
+    if ( file_exists( $mofile_global ) ) {
+        // Look in global /wp-content/languages/menu-extension-for-bbpress folder
+        load_textdomain( 'menu-extension-for-bbpress', $mofile_global );
+    } elseif ( file_exists( $mofile_local ) ) {
+        // Look in local /wp-content/plugins/menu-extension-for-bbpress/languages/ folder
+        load_textdomain( 'menu-extension-for-bbpress', $mofile_local );
+    } else {
+        // Load the default language files
+        load_plugin_textdomain( 'menu-extension-for-bbpress', false, $lang_dir );
+    }
 }
 
 
