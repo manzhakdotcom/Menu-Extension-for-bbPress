@@ -20,7 +20,7 @@ Features :
 
 * With this plugin you can now add a bbPress links to existing WordPress menu.
 
-If you have suggestions or bugfixes for the plugin, please report them on [Github](https://github.com/manzhakdotcom/bbPress-Menu-Extension).
+If you have suggestions or bugfixes for the plugin, please report them on [Github](https://github.com/manzhakdotcom/Menu-Extension-for-bbPress).
 
 **Languages**
 
@@ -52,6 +52,9 @@ Visit your navigation admin menu page, you got a new box including 2 links - *"T
 1. The bbPress menu in nav menu admin page.
 
 == Changelog ==
+
+= 0.0.6 =
+* change text domain
 
 = 0.0.5 =
 * Add language

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: bbPress Menu Extension\n"
-"POT-Creation-Date: 2016-11-18 11:50+0300\n"
-"PO-Revision-Date: 2016-11-18 11:53+0300\n"
+"POT-Creation-Date: 2016-11-22 16:02+0300\n"
+"PO-Revision-Date: 2016-11-22 16:03+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -21,18 +21,6 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: bbpress-menu-extension.php:63
-#, php-format
-msgid ""
-"The \"Menu Extension for bbPress\" %1$sis inactive.%2$s The %3$sbbPress%4$s "
-"plugin must be active for the \"Menu Extension for bbPress\" to work. Please "
-"activate bbPress on the %5$splugin page%6$s once it is installed."
-msgstr ""
-"Плагин \"Меню расширение для  bbPress\" %1$sбыл деактивирован.%2$s Плагин "
-"%3$sbbPress%4$s должен быть установлен и активирован, чтобы плагин \"Меню "
-"расширение для  bbPress\" работал. Пожалуйста, установите и активируйте "
-"bbPress на %5$sстранице плагинов%6$s."
-
 #: include/admin.php:8
 msgid "bbPress Links"
 msgstr "Ссылки bbPress"
@@ -49,13 +37,25 @@ msgstr "Мой профиль"
 msgid "Add to Menu"
 msgstr "Добавить в меню"
 
+#: menu-extension-for-bbpress.php:63
+#, php-format
+msgid ""
+"The \"Menu Extension for bbPress\" %1$sis inactive.%2$s The %3$sbbPress%4$s "
+"plugin must be active for the \"Menu Extension for bbPress\" to work. Please "
+"activate bbPress on the %5$splugin page%6$s once it is installed."
+msgstr ""
+"Плагин \"Меню расширение для  bbPress\" %1$sбыл деактивирован.%2$s Плагин "
+"%3$sbbPress%4$s должен быть установлен и активирован, чтобы плагин \"Меню "
+"расширение для  bbPress\" работал. Пожалуйста, установите и активируйте "
+"bbPress на %5$sстранице плагинов%6$s."
+
 #. Plugin Name of the plugin/theme
-msgid "The Menu Extension for bbPress"
-msgstr "Меню расширение для bbPress"
+msgid "Menu Extension for bbPress"
+msgstr "Меню расширение для  bbPress"
 
 #. Plugin URI of the plugin/theme
 msgid "http://www.manzhak.com/menu-extension-for-bbpress"
-msgstr ""
+msgstr "http://www.manzhak.com/menu-extension-for-bbpress"
 
 #. Description of the plugin/theme
 msgid "You can now add bbPress links in your WP menus."
@@ -67,7 +67,10 @@ msgstr "Сергий Манжак"
 
 #. Author URI of the plugin/theme
 msgid "http://www.manzhak.com/"
-msgstr ""
+msgstr "http://www.manzhak.com/"
+
+#~ msgid "The Menu Extension for bbPress"
+#~ msgstr "Меню расширение для bbPress"
 
 #~ msgid ""
 #~ "The Menu Extension for bbPress %1$sis inactive.%2$s The %3$sbbPress%4$s "
@@ -77,9 +80,6 @@ msgstr ""
 #~ "Меню расширение для  bbPress %1$sне активно.%2$s Плагин %3$sbbPress%4$s "
 #~ "должен быть активен, чтобы плагин Меню расширение для  bbPress работал. "
 #~ "Пожалуйста, установите и активируйте bbPress на %5$sстранице плагинов%6$s."
-
-#~ msgid "Menu Extension for bbPress"
-#~ msgstr "Меню расширение для  bbPress"
 
 #~ msgid ""
 #~ "The %1$sMenu Extension for bbPress is inactive.%2$s The %3$sbbPress%4$s "
