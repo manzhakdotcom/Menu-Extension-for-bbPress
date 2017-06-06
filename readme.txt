@@ -9,8 +9,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-> We provide advance level of support for installation and customization at $10/hour.
-> 
 > [Click here](http://www.manzhak.com/contact-us/)  for more information.
 
 
